@@ -236,8 +236,7 @@ let firstLast = [];
 
 people.forEach((name) => {
     name = name.split(', ')
-    let reverseName = [name[1], name[0]]
-    reverseName = reverseName.join(' ')
+    const reverseName = [name[1], name[0]].join(' ')
     firstLast.push(reverseName)
 })
 
@@ -403,9 +402,6 @@ let totalYearsLived = 0;
 
 // Complete the exercise in the space below:
 
-// year - yearofdeath = yearsalive
-// calculate accumulated yearsLived
-
 inventors.reduce((acc, inventor) => {
     totalYearsLived += inventor.passed - inventor.year
 }, 0)
@@ -439,30 +435,11 @@ let travelMethodCounts = {};
 
 // Complete the exercise in the space below:
 
-// inventorNames = inventors.map((inventor) => ({'first': inventor.first, 'last': inventor.last}))
-
 travelMethods.reduce((acc, travel) => {
-    // is travelMethod a key in travelMethodCounts ? 
+    // if travelMethod is not a key in travelMethodCounts, make one
     if (travel in travelMethodCounts === false) travelMethodCounts[travel] = 0
     travelMethodCounts[travel] += 1
 }, {})
-
-// const travelMethods = [
-//     'car',
-//     'car',
-//     'truck',
-//     'truck',
-//     'bike',
-//     'walk',
-//     'car',
-//     'van',
-//     'bike',
-//     'walk',
-//     'car',
-//     'van',
-//     'car',
-//     'truck',
-//   ];
 
 // Check your work:
 console.log('Level Up 2 my result: ', travelMethodCounts);
